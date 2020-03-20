@@ -178,7 +178,11 @@ public class LogareActivity extends AppCompatActivity {
                                 Toast.makeText(LogareActivity.this,"Te-ai logat cu success!",Toast.LENGTH_LONG).show();
                                 baraIncarcare.dismiss();
 
-                                
+                                Intent intent = new Intent(LogareActivity.this,AcasaActivity.class);
+                                Predominant.utilizatorCurent = dateUtilizator;
+                                startActivity(intent);
+
+
                             }
                         }
                         else
