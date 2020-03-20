@@ -3,12 +3,18 @@ package com.example.ecv4;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.ecv4.Model.Produse;
 import com.example.ecv4.Predominant.Predominant;
+import com.example.ecv4.ProdusVizualizare.ProdusVizualizare;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.view.LayoutInflater;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
@@ -16,22 +22,37 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import static androidx.recyclerview.widget.RecyclerView.*;
 
 public class AcasaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private DatabaseReference ProdusRef;
+    private RecyclerView recyclerView;
+    LayoutManager layoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ProdusRef = FirebaseDatabase.getInstance().getReference().child("Produse");
+
         setContentView(R.layout.activity_acasa);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -56,6 +77,49 @@ public class AcasaActivity extends AppCompatActivity
         ImageView profilImageView = headerView.findViewById(R.id.utilizator_poza);
 
         utilizatorTextView.setText(Predominant.utilizatorCurent.getNume());
+
+        recyclerView = findViewById(R.id.scroll_menu);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseRecyclerOptions<Produse> options = new
+                FirebaseRecyclerOptions.Builder<Produse>()
+                .setQuery(ProdusRef,Produse.class)
+                .build();
+
+
+        FirebaseRecyclerAdapter<Produse, ProdusVizualizare> adapter = new FirebaseRecyclerAdapter<Produse, ProdusVizualizare>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull ProdusVizualizare holder, int position, @NonNull Produse model) {
+
+                holder.txtProdusNume.setText(model.getProdusnume());
+                holder.txtProdusDescriere.setText(model.getDescriere());
+                holder.txtProdusPret.setText(" Pret " + model.getPret() + " RON ");
+                Picasso.get().load(model.getImagine()).into(holder.imagineView);
+
+            }
+
+            @NonNull
+            @Override
+            public ProdusVizualizare onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.produse_design, parent, false);
+                ProdusVizualizare holder = new ProdusVizualizare(view);
+                return holder;
+
+            }
+        };
+
+
+        recyclerView.setAdapter(adapter);
+adapter.startListening();
+
     }
 
     @Override
