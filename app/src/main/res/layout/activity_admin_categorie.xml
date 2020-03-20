@@ -1,9 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/category_background"
     tools:context=".AdminCategorieActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/slogan_categorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="Cateogrii"
+        android:textAlignment="center"
+        android:textSize="29sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_orange_dark"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/linear1_categorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/slogan_categorie"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        >
+
+        <ImageView
+            android:id="@+id/laptopuri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/laptops"
+            />
+
+        <ImageView
+            android:id="@+id/telefoane"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/telefoane"
+            />
+        <ImageView
+            android:id="@+id/ceasuri"
+            android:layout_width="97dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ceasuri"
+            />
+        <ImageView
+            android:id="@+id/casti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/casti"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2_categorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linear1_categorie"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        >
+
+        <ImageView
+            android:id="@+id/pulover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pulover"
+            />
+
+        <ImageView
+            android:id="@+id/tricouri_sport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sports"
+            />
+        <ImageView
+            android:id="@+id/tricouri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tricouri"
+            />
+        <ImageView
+            android:id="@+id/haine_femei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/haine_femei"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linear3_categorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linear2_categorie"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        >
+
+        <ImageView
+            android:id="@+id/pantofi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pantofi"
+            />
+
+        <ImageView
+            android:id="@+id/ochelari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ochelari"
+            />
+        <ImageView
+            android:id="@+id/gradinarit"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/gradinarit"
+            />
+        <ImageView
+            android:id="@+id/genti"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/genti"
+            />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
