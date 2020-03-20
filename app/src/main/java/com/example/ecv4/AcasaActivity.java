@@ -3,6 +3,7 @@ package com.example.ecv4;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.ecv4.Predominant.Predominant;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -22,6 +23,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class AcasaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,6 +50,12 @@ public class AcasaActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        View headerView = navigationView.getHeaderView(0);
+        TextView utilizatorTextView = headerView.findViewById(R.id.utilizator_nume);
+        ImageView profilImageView = headerView.findViewById(R.id.utilizator_poza);
+
+        utilizatorTextView.setText(Predominant.utilizatorCurent.getNume());
     }
 
     @Override
