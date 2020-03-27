@@ -178,6 +178,9 @@ adapter.startListening();
 
         } else if (id == R.id.nav_setari) {
 
+            Intent intent = new Intent(AcasaActivity.this,SetariActivity.class );
+            startActivity(intent);
+
         } else if (id == R.id.nav_delogare) {
 
             delogare();
