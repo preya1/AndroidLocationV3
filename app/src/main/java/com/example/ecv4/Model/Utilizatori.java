@@ -2,17 +2,19 @@ package com.example.ecv4.Model;
 
 public class Utilizatori
 {
-    private String nume,telefon,parola;
+    private String nume,telefon,parola,imagine,adresa;
 
-    public Utilizatori()
-    {
+
+    public Utilizatori() {
 
     }
 
-    public Utilizatori(String nume, String telefon, String parola) {
+    public Utilizatori(String nume, String telefon, String parola, String imagine, String adresa) {
         this.nume = nume;
         this.telefon = telefon;
         this.parola = parola;
+        this.imagine = imagine;
+        this.adresa = adresa;
     }
 
     public String getNume() {
@@ -37,5 +39,21 @@ public class Utilizatori
 
     public void setParola(String parola) {
         this.parola = parola;
+    }
+
+    public String getImagine() {
+        return imagine;
+    }
+
+    public void setImagine(String imagine) {
+        this.imagine = imagine;
+    }
+
+    public String getAdresa() {
+        return adresa;
+    }
+
+    public void setAdresa(String adresa) {
+        this.adresa = adresa;
     }
 }

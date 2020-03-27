@@ -77,6 +77,8 @@ public class AcasaActivity extends AppCompatActivity
         ImageView profilImageView = headerView.findViewById(R.id.utilizator_poza);
 
         utilizatorTextView.setText(Predominant.utilizatorCurent.getNume());
+        Picasso.get().load(Predominant.utilizatorCurent.getImagine()).placeholder(R.drawable.profile).into(profilImageView);
+
 
         recyclerView = findViewById(R.id.scroll_menu);
         recyclerView.setHasFixedSize(true);

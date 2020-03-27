@@ -87,7 +87,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/setare_numar_telefon"
+        android:id="@+id/setare_telefon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/schimbare_profil_imagine"
@@ -102,7 +102,7 @@
         android:id="@+id/setare_nume"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/setare_numar_telefon"
+        android:layout_below="@+id/setare_telefon"
         android:hint="Nume"
         android:backgroundTint="@android:color/holo_orange_dark"
         android:layout_margin="15dp"
