@@ -98,12 +98,23 @@ public class AcasaActivity extends AppCompatActivity
 
         FirebaseRecyclerAdapter<Produse, ProdusVizualizare> adapter = new FirebaseRecyclerAdapter<Produse, ProdusVizualizare>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull ProdusVizualizare holder, int position, @NonNull Produse model) {
+            protected void onBindViewHolder(@NonNull ProdusVizualizare holder, int position, @NonNull final Produse model) {
 
                 holder.txtProdusNume.setText(model.getProdusnume());
                 holder.txtProdusDescriere.setText(model.getDescriere());
                 holder.txtProdusPret.setText(" Pret " + model.getPret() + " RON ");
                 Picasso.get().load(model.getImagine()).into(holder.imagineView);
+
+                holder.itemView.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Intent intent = new Intent(AcasaActivity.this,ProdusDetaliiActivity.class);
+                        intent.putExtra("produsid",model.getProdusid());
+                        startActivity(intent);
+
+                    }
+                });
 
             }
 
