@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProdusDetaliiActivity">
+
+    <ImageView
+        android:id="@+id/produs_imagine_detalii"
+        android:layout_width="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/nume_produs_detalii"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/produs_imagine_detalii"
+        android:text="Nume Produs"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_green_dark"
+        />
+
+
+    <TextView
+        android:id="@+id/descriere_produs_detalii"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nume_produs_detalii"
+        android:text="Descriere Produs"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_green_dark"
+        />
+
+    <TextView
+        android:id="@+id/pret_produs_detalii"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descriere_produs_detalii"
+        android:text="Pret"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_green_dark"
+        />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/elegant_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:textColor="@android:color/holo_orange_dark"
+        app:textSize="12dp"
+        android:elevation="6dp"
+        android:layout_marginTop="10dp"
+        app:initialNumber="1"
+        app:finalNumber="6"
+        android:layout_below="@+id/pret_produs_detalii"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        >
+    </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/adauga_produs_cos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/nav_cos"
+        app:fabSize="normal"
+        android:backgroundTint="@android:color/holo_green_dark"
+
+        />
+
+</RelativeLayout>
