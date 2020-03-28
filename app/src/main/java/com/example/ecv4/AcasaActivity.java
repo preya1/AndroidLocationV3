@@ -59,9 +59,11 @@ public class AcasaActivity extends AppCompatActivity
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(AcasaActivity.this,CosActivity.class);
+                startActivity(intent);
+
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -183,7 +185,9 @@ adapter.startListening();
         int id = item.getItemId();
 
         if (id == R.id.nav_cos) {
-            // Handle the camera action
+
+            Intent intent = new Intent(AcasaActivity.this,CosActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_categorii) {
 
