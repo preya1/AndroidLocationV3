@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FinalizareComandaActivity">
+
+    <TextView
+        android:id="@+id/date_livrare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Va rugam sa introduceti adresa de domiciliu pentru livrare"
+        android:textSize="20dp"
+        android:textColor="@android:color/holo_orange_dark"
+        android:layout_margin="40dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColorHint="@android:color/holo_orange_dark"
+        />
+
+    <EditText
+        android:id="@+id/nume_livrare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date_livrare"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Numele Dumneavoastra"
+        android:textColorHint="@android:color/holo_orange_dark"
+        />
+
+    <EditText
+        android:id="@+id/setare_telefon_livrare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nume_livrare"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Numarul de telefon"
+        android:textColorHint="@android:color/holo_orange_dark"
+        />
+
+    <EditText
+        android:id="@+id/setare_adresa_livrare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setare_telefon_livrare"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Adresa De Domiciliu"
+        android:textColorHint="@android:color/holo_orange_dark"
+        />
+
+    <EditText
+        android:id="@+id/setare_oras_livrare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setare_adresa_livrare"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Adresa De Domiciliu"
+        android:textColorHint="@android:color/holo_orange_dark"
+        />
+    
+    <Button
+        android:id="@+id/confirma_livrare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:text="Confirma"
+        android:background="@android:color/holo_green_dark"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="18dp"
+        />
+    
+
+</RelativeLayout>

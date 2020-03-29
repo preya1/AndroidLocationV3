@@ -33,6 +33,8 @@ public class CosActivity extends AppCompatActivity {
     private Button urmatorulProces;
     private TextView sumaTotala;
 
+    private int pretTotalLivrare = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,21 @@ public class CosActivity extends AppCompatActivity {
 
         urmatorulProces = (Button)findViewById(R.id.pas_urmator);
         sumaTotala = (TextView)findViewById(R.id.pret_total);
+
+        urmatorulProces.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                sumaTotala.setText("Pret Total : "  + String.valueOf(pretTotalLivrare));
+
+                Intent intent = new Intent(CosActivity.this,FinalizareComandaActivity.class);
+                intent.putExtra("Pret Total",String.valueOf(pretTotalLivrare));
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
     }
 
     @Override
@@ -68,6 +85,9 @@ public class CosActivity extends AppCompatActivity {
                   holder.produsCantitate.setText( "Cantitate " + model.getCantitate());
                   holder.produsNume.setText(model.getProdusnume());
                   holder.produsPret.setText( "Pret " + model.getPret() + "RON");
+
+                  int pretTotalPerProdus = ((Integer.valueOf(model.getPret())))*Integer.valueOf(model.getCantitate());
+                  pretTotalLivrare = pretTotalLivrare + pretTotalPerProdus;
 
                   holder.itemView.setOnClickListener(new View.OnClickListener() {
                       @Override
