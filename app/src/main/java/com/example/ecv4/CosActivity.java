@@ -53,7 +53,6 @@ public class CosActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                sumaTotala.setText("Pret Total : "  + String.valueOf(pretTotalLivrare));
 
                 Intent intent = new Intent(CosActivity.this,FinalizareComandaActivity.class);
                 intent.putExtra("Pret Total",String.valueOf(pretTotalLivrare));
@@ -63,12 +62,15 @@ public class CosActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
     @Override
     protected void onStart()
     {
         super.onStart();
+
 
         final DatabaseReference cosListaRef = FirebaseDatabase.getInstance().getReference().child("Lista Cos");
         FirebaseRecyclerOptions<Cos> options = new FirebaseRecyclerOptions.Builder<Cos>()
@@ -88,6 +90,8 @@ public class CosActivity extends AppCompatActivity {
 
                   int pretTotalPerProdus = ((Integer.valueOf(model.getPret())))*Integer.valueOf(model.getCantitate());
                   pretTotalLivrare = pretTotalLivrare + pretTotalPerProdus;
+
+                  sumaTotala.setText("Pret Total : "  + String.valueOf(pretTotalLivrare));
 
                   holder.itemView.setOnClickListener(new View.OnClickListener() {
                       @Override
